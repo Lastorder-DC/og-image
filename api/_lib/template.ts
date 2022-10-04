@@ -7,9 +7,8 @@ const twemoji = require('twemoji');
 const twOptions = { folder: 'svg', ext: '.svg' };
 const emojify = (text: string) => twemoji.parse(text, twOptions);
 
-const rglr = readFileSync(`${__dirname}/../_fonts/NanumBarunGothicWeb.woff`).toString('base64');
-const bold = readFileSync(`${__dirname}/../_fonts/NanumBarunGothicWebBold.woff`).toString('base64');
-const mono = readFileSync(`${__dirname}/../_fonts/D2Coding.woff`).toString('base64');
+const rglr = readFileSync(`${__dirname}/../_fonts/D2Coding-Regular.woff2`).toString('base64');
+const bold = readFileSync(`${__dirname}/../_fonts/D2Coding-Bold.woff`).toString('base64');
 
 function getCss(theme: string, fontSize: string) {
     let background = 'white';
@@ -23,25 +22,18 @@ function getCss(theme: string, fontSize: string) {
     }
     return `
     @font-face {
-        font-family: 'NanumBarunGothic';
+        font-family: 'D2Coding';
         font-style:  normal;
         font-weight: normal;
-        src: url(data:font/woff;charset=utf-8;base64,${rglr}) format('woff');
-    }
-
-    @font-face {
-        font-family: 'NanumBarunGothic';
-        font-style:  normal;
-        font-weight: bold;
-        src: url(data:font/woff;charset=utf-8;base64,${bold}) format('woff');
+        src: url(data:font/woff2;charset=utf-8;base64,${rglr}) format('woff2');
     }
 
     @font-face {
         font-family: 'D2Coding';
-        font-style: normal;
-        font-weight: normal;
-        src: url(data:font/woff2;charset=utf-8;base64,${mono})  format("woff2");
-      }
+        font-style:  normal;
+        font-weight: bold;
+        src: url(data:font/woff2;charset=utf-8;base64,${bold}) format('woff2');
+    }
 
     body {
         background: ${background};
@@ -95,7 +87,7 @@ function getCss(theme: string, fontSize: string) {
     }
     
     .heading {
-        font-family: 'NanumBarunGothic', sans-serif;
+        font-family: 'D2Coding', sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
         font-style: normal;
         color: ${foreground};
