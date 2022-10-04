@@ -8,7 +8,7 @@ const twOptions = { folder: 'svg', ext: '.svg' };
 const emojify = (text: string) => twemoji.parse(text, twOptions);
 
 const rglr = readFileSync(`${__dirname}/../_fonts/D2Coding-Regular.woff2`).toString('base64');
-const bold = readFileSync(`${__dirname}/../_fonts/D2Coding-Bold.woff`).toString('base64');
+const bold = readFileSync(`${__dirname}/../_fonts/D2Coding-Bold.woff2`).toString('base64');
 
 function getCss(theme: string, fontSize: string) {
     let background = 'white';
